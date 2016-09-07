@@ -34,6 +34,7 @@ Either install via [npm](https://npmjs.org/package/crowdmark) or directly via [s
     id             Crowdmark page identifier(s) (separate by space) [required].
     -h --help      Display this help dialog.
     -v --version   Display the current version.
+    -p --path      Directory where files will be saved (defaults to ~/Desktop/crowdmark-scores).
     -s --show      View the scraping in action.
 
   Example
