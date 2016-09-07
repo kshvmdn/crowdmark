@@ -1,6 +1,6 @@
 {
   "name": "crowdmark",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A CLI to download all test pages from a Crowdmark page.",
   "keywords": [],
   "homepage": "https://github.com/kshvmdn/crowdmark#readme",
