@@ -6,7 +6,7 @@
 
 ### Install
 
-Either install via [npm](https://npmjs.org/package/crowdmark) or directly via [source](https://github.com/kshvmdn/crowdmark/archive/master.zip)
+Either install via [npm](https://npmjs.org/package/crowdmark) or directly via [source](https://github.com/kshvmdn/crowdmark/archive/master.zip).
 
 - npm
 
