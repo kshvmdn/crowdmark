@@ -1,7 +1,7 @@
 {
   "name": "crowdmark",
-  "version": "0.0.0",
-  "description": "A CLI to download all test images from a Crowdmark grade page.",
+  "version": "0.0.1",
+  "description": "A CLI to download all test pages from a Crowdmark page.",
   "keywords": [],
   "homepage": "https://github.com/kshvmdn/crowdmark#readme",
   "bugs": {
@@ -18,15 +18,13 @@
     "url": "git+https://github.com/kshvmdn/crowdmark.git"
   },
   "scripts": {
-    "lint": "eslint lib",
-    "test": "npm run lint && mocha test"
-  },
-  "eslintConfig": {
-    "extends": [
-      "standard"
-    ]
+    "lint": "eslint bin/crowdmark lib",
+    "test": "npm run lint && mocha lib/**/*.spec.js"
   },
   "dependencies": {
+    "home-dir": "^1.0.0",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
     "nightmare": "^2.7.0"
   },
   "devDependencies": {

@@ -1,3 +1,62 @@
 #!/usr/bin/env node
 
+const homedir = require('home-dir')
+const minimist = require('minimist')
+const path = require('path')
+
 const crowdmark = require('./../lib/')
+const pkg = require('./../package.json')
+
+const argv = minimist(process.argv.slice(2), {
+  alias: {
+    h: 'help',
+    p: 'path',
+    s: 'show',
+    v: 'version'
+  },
+  boolean: [
+    'help',
+    'show',
+    'version'
+  ],
+  default: {
+    p: path.join(homedir(), 'Desktop', 'crowdmark-scores')
+  },
+  string: [
+    'path'
+  ]
+})
+
+const help = `
+  Usage
+    $ crowdmark <id, ...> [--help] [--version] [--show]
+
+  Options
+    id             Crowdmark page identifier(s) (separate by space) [required].
+    -h --help      Display this help dialog.
+    -v --version   Display the current version.
+    -s --show      View the scraping in action.
+
+  Example
+    $ crowdmark 8fa43520-8fd2-4ad1-9979-40fe05ecf8ab
+    $ crowdmark 8fa43520-8fd2-4ad1-9979-40fe05ecf8ab a4893443-e167-4f74-b45c-05b7ae7b6a92
+`
+
+if (argv.help || argv.version) {
+  console.log(argv.help ? help : `${pkg.name} v${pkg.version}`)
+  process.exit(0)
+}
+
+if (!argv._ || argv._.length === 0) {
+  console.log('Expected at least single Crowdmark identifier.')
+  process.exit(1)
+}
+
+crowdmark({
+  ids: argv._,
+  path: argv.path,
+  show: argv.show
+}).catch(err => {
+  console.err(err)
+  process.exit(1)
+})
