@@ -14,6 +14,8 @@ Either install via [npm](https://npmjs.org/package/crowdmark) or directly via [s
   $ npm install -g crowdmark
   ```
 
+- Source
+
   ```sh
   $ git clone https://github.com/kshvmdn/crowdmark.git && cd crowdmark && npm install
   ```
